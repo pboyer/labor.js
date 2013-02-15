@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Worker example: One-core computation</title>
+  <script src="labor.js"></script>
+ </head>
+
+ <body>
+
+  <script>
+
+		var pool = new labor.Pool('worker.js', 2);
+
+		pool.addWork( 'first_arg', ['ding dong'], function(result) {
+			console.log( result );
+		});	
+	
+  </script>
+
+ </body>
+</html>

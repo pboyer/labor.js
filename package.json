@@ -1,0 +1,9 @@
+{
+  "name": "labor",
+  "version": "0.1.0",
+  "dependencies": {
+    "webworker-threads" : "*"
+    , "mocha" : "*"
+    , "should" : "*"
+  }
+}
