@@ -1,12 +1,19 @@
 {
   "name": "labor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "pboyer <peter.b.boyer@gmail.com>",
   "description": "Worker pool of Web Workers and tools for message passing.",
   "repository": {
     "type": "git",
     "url": "https://github.com/pboyer/labor.js.git"
   },
+  "keywords": [
+    "threads",
+    "webworker",
+    "pool",
+    "threadpool",
+    "thread"
+  ],
   "main": "src/labor.js",
   "dependencies": {
     "webworker-threads" : "*"
