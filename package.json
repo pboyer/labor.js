@@ -1,9 +1,19 @@
 {
   "name": "labor",
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "author": "pboyer <peter.b.boyer@gmail.com>",
+  "description": "Worker pool of Web Workers and tools for message passing.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pboyer/labor.js.git"
+  },
   "dependencies": {
     "webworker-threads" : "*"
-    , "mocha" : "*"
-    , "should" : "*"
-  }
+  },
+  "devDependencies": {
+    "benchmark": "*",
+    "mocha" : "*",
+    "should": "*"
+  },
+  "license": "MIT"
 }

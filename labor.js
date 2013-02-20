@@ -6,10 +6,11 @@ else // node.js context
 {
 
 	var labor = module.exports = {}
-		, Worker = require('webworker-threads').Worker;
+		, Worker = require('webworker');
+
 }
 
-(function(labor) { 
+( function(labor) {
 
 	labor.Router = function( library )
 	{
@@ -27,7 +28,7 @@ else // node.js context
 			postMessage( { result: self.lib[ e.data.func ].apply( null, e.data.arguments ), id: e.data.id } );
 		};
 
-	};
+	}
 
 	labor.Pool = function(filename, count) {
 
@@ -39,14 +40,9 @@ else // node.js context
 	  this.pool = [];
 	  this.working = {};
 	  this.uuid = 0;
-	  return this;
+	  this.fillPool();
 
 	};
-
-	labor.Pool.prototype.start = function() {
-		this.fillPool();
-		return this;
-	}
 
 	labor.Pool.prototype.onfinish = function() {};
 
@@ -79,7 +75,7 @@ else // node.js context
 	      // we tell the worker what to do upon completing its task
 	      worker.onmessage = function( e ){
 		
-				var id = this.id;
+					var id = this.id;
 			    delete self.working[this.id];
 			    this.id = null;
 			    self.pool.push(this); 
@@ -88,7 +84,7 @@ else // node.js context
 
 			      if ( self.callbacks[ id ] )
 						{
-							self.callbacks[ id ]( e.data.result );
+							self.callbacks[ id ]( e.data );
 							delete self.callbacks[id];
 						}
 
@@ -100,11 +96,10 @@ else // node.js context
 
 				};
 
-	      worker.postMessage( unit ); 
+	      worker.postMessage( unit ); // let's do it
 
 	    }
 	  }
-	  return this;
 	};
 
 	labor.Pool.prototype.addWorker = function() {
@@ -113,7 +108,6 @@ else // node.js context
 	  var self = this;
 
 	  this.pool.push(w);
-	  return this;
 
 	};
 
@@ -124,4 +118,3 @@ else // node.js context
 	};
 
 })(labor);
-
