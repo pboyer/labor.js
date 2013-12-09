@@ -1,6 +1,6 @@
 {
   "name": "labor",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "pboyer <peter.b.boyer@gmail.com>",
   "description": "Worker pool of Web Workers and tools for message passing.",
   "repository": {

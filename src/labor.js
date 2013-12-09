@@ -1,6 +1,6 @@
 if ( typeof exports != 'object' || exports === undefined )  // browser context
 {
-	var labor = window.labor;
+	var labor = window.labor || {};
 }
 else // node.js context
 {
