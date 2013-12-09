@@ -1,6 +1,6 @@
 {
   "name": "labor",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "author": "pboyer <peter.b.boyer@gmail.com>",
   "description": "Worker pool of Web Workers and tools for message passing.",
   "repository": {
@@ -16,11 +16,11 @@
   ],
   "main": "src/labor.js",
   "dependencies": {
-    "webworker-threads" : "*"
+    "webworker-threads": "*"
   },
   "devDependencies": {
     "benchmark": "*",
-    "mocha" : "*",
+    "mocha": "*",
     "should": "*"
   },
   "license": "MIT"
