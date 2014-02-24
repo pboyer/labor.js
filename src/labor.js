@@ -4,12 +4,16 @@ if ( typeof exports != 'object' || exports === undefined )  // browser context
 }
 else // node.js context
 {
-
-	var labor = module.exports = {}
-		, Worker = require('webworker-threads').Worker;
+	var labor = module.exports = {};
 }
 
 (function(labor) { 
+
+	// Use a library for Worker if it doesn't exist. This is not done
+	// in the node.js so this library can be used with browserify
+	if (typeof Worker === 'undefined') {
+	  	Worker = require('webworker-threads').Worker;
+	}
 
 	labor.Router = function( library )
 	{
